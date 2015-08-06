@@ -9,7 +9,8 @@ class TieBreakerTest < Minitest::Test
   end
 
   def test_return_if_only_one_score
-    assert_equal [], @tie_breaker.break_tie([], [])
+    assert_equal [3,5,3,4,3,4,4,3,4,4,3,5,4,3,4,5,4,5], @tie_breaker.break_tie([3,5,3,4,3,4,4,3,4,4,3,5,4,3,4,5,4,5], [3,5,3,4,3,4,4,3,4,4,3,4,5,3,4,5,4,5])
+    assert_equal [3,5,3,4,3,4,4,3,4,4,3,5,4,3,4,5,4,5], @tie_breaker.break_tie([3,5,2,5,3,4,4,3,4,4,3,5,4,3,4,5,4,5], [3,5,3,4,3,4,4,3,4,4,3,5,4,3,4,5,4,5])
   end
 
 end
